@@ -3,20 +3,20 @@ import './App.css'
 function App() {
   return (
     <div className='main'>
-      <div className='outhor'>
-        <div className='inner'>
+      <div className='curriculum'> 
+        <div className='curtable'>
           <div className='grade'>1학년</div>
           <SubjectList index={0} />
         </div>
-        <div className='inner'>
+        <div className='curtable'>
           <div className='grade'>2학년</div>
           <SubjectList index={1} />
         </div>
-        <div className='inner'>
+        <div className='curtable'>
         <div className='grade'>3학년</div>
         <SubjectList index={2} />
         </div>
-        <div className='inner'>
+        <div className='curtable'>
         <div className='grade'>4학년</div>
         <SubjectList index={3} />
         </div>
@@ -27,7 +27,10 @@ function App() {
 
 /** 교과목 리스트 불러오기 */
 function SubjectList({ index }) {
-  const subjects = [[ // 교과목 리스트
+  const subjects = [[ // 교과목 리스트를 2차원 배열로 받아옴
+    // 1학년 : 인덱스 0
+    // major : 공통 전공 , invisible : 빈칸, mojorC : 콘텐츠 IT전공,
+    // mojorE : 필수 전공
     { name: "이산구조론", type: "major" },
     { name: "NONE", type: "invisible" },
     { name: "NONE", type: "invisible" },
@@ -48,6 +51,7 @@ function SubjectList({ index }) {
     { name: "선형대수", type: "major" },
   ],
   [
+    // 2학년 :인덱스 1
     { name: "논리설계및실험", type: "major" },
     { name: "컴퓨터구조", type: "major" },
     { name: "자료구조", type: "major" },
@@ -69,7 +73,7 @@ function SubjectList({ index }) {
     { name: "NONE", type: "invisible" },
     { name: "NONE", type: "invisible" },
   ],
-  [
+  [ // 3학년 : 인덱스 2
     {name : "운영체제", type : "major"},
     {name : "NONE", type : "invisible"},
     {name : "소프트웨어공학", type : "major"},
@@ -90,6 +94,7 @@ function SubjectList({ index }) {
     {name : "게임프로그래밍", type : "majorC"},
   ],
   [
+    // 4학년 인덱스 3
     {name : "NONE", type : "invisible"},
     {name : "NONE", type : "invisible"},
     {name : "NONE", type : "invisible"},
@@ -110,7 +115,7 @@ function SubjectList({ index }) {
     {name : "콘텐츠IT캡스톤디자인", type : "majorE"},
   ]
   ];
-
+  // 교과목을 저장한 배열을 Component로 변환
   return (
     <div className='subjectlist'>
       {subjects[index].map(renderItem)}
@@ -118,27 +123,27 @@ function SubjectList({ index }) {
   )
 }
 
-/** SW전공 공통 */
-function SubjectBox({ name: props }) {
+/** SW전공 공통 Component*/
+function SubjectBtn({ name: props }) {
   return (
     <button className="subject" onClick={Clicked}>{props}</button>
   )
 }
 
-/** 안보이는 버튼: 빈칸 */
-function InvisibleBox() {
+/** 안보이는 버튼: 빈칸 Component*/
+function InvisibleBtn() {
   return (
     <button className='subjectI'></button>
   )
 }
 
-/** 전공필수*/
-function EssentialBox({ name: props }) {
+/** 전공필수 Component*/
+function EssentialBtn({ name: props }) {
   return (<button className='subjectE' onClick={Clicked}>{props}</button>)
 }
 
-/** 콘텐츠 IT전공 */
-function ContentBox({ name: props }) {
+/** 콘텐츠 IT전공 Component*/
+function ContentBtn({ name: props }) {
   return (<button className='subjectC' onClick={Clicked}>{props}</button>)
 }
 
@@ -146,13 +151,13 @@ function ContentBox({ name: props }) {
 function renderItem(item) {
   switch (item.type) {
     case "major": // SW전공 공통
-      return (<SubjectBox name={item.name} />)
+      return (<SubjectBtn name={item.name} />)
     case "invisible": // BLANK칸
-      return (<InvisibleBox />)
+      return (<InvisibleBtn />)
     case "majorC": // 컨텐츠IT전공
-      return (<ContentBox name={item.name} />)
+      return (<ContentBtn name={item.name} />)
     case "majorE": // 전공필수
-      return (<EssentialBox name={item.name} />)
+      return (<EssentialBtn name={item.name} />)
     default:
       break;
   }
