@@ -28,8 +28,8 @@ function Header(){
         <>
             <div className='main_Header'>
                 <div className='left_group' onClick={toggleSidebar}>
-                    <img src = "../src/assets/menu_bar.png" className='menubar'></img>
-                    <img src = "../src/assets/hallym_symbols.png" alt = "Hallym" className='hallymSymbols'/>
+                    <img src = "../assets/menu_bar.png" className='menubar'></img>
+                    <img src = "../assets/hallym_symbols.png" alt = "Hallym" className='hallymSymbols'/>
                     <span className='header_college_name'>정보과학대학</span>
                 </div>
                 <button className='login_button'>로그인</button>
