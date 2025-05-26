@@ -1,0 +1,334 @@
+/* 메인 컨테이너 */
+.majortrack_container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 헤더 섹션 */
+.majortrack_header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.majortrack_title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.title_underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #51B3AC, #2a8079);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* 범례 컨테이너 */
+.legend_container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.legend_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.legend_color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+}
+
+.legend_color.common {
+    background-color: transparent;
+    border-color: #51B3AC;
+}
+
+.legend_color.content {
+    background-color: #51B3AC;
+}
+
+.legend_color.essential {
+    background-color: #fd7e14;
+}
+
+/* 슬라이더 컨테이너 */
+.slider_container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+/* 슬라이더 래퍼 */
+.slider_wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* 슬라이더 트랙 */
+.slider_track {
+    width: 100%;
+}
+
+/* 각 슬라이드 */
+.slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* 학년 테이블 */
+.curtable {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 학년 헤더 */
+.grade {
+    width: 100%;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #51B3AC, #2a8079);
+    box-shadow: 0 4px 15px rgba(81, 179, 172, 0.3);
+    transition: transform 0.2s ease;
+}
+
+/* 학년별 색상 구분 */
+.grade_1 {
+    background: linear-gradient(135deg, #6f42c1, #5a2d91);
+    box-shadow: 0 4px 15px rgba(111, 66, 193, 0.3);
+}
+
+.grade_2 {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.grade_3 {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.grade_4 {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* 교과목 리스트 그리드 */
+.subjectlist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* 공통 버튼 스타일 */
+.subject, .subjectE, .subjectC {
+    padding: 10px 6px;
+    border-radius: 8px;
+    width: 100%;
+    height: 70px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    transition: all 0.2s ease;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* SW전공 공통 과목 */
+.subject {
+    background-color: transparent;
+    color: #51B3AC;
+    border-color: #51B3AC;
+}
+
+.subject:hover {
+    background-color: #51B3AC;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(81, 179, 172, 0.3);
+}
+
+/* 전공필수 과목 */
+.subjectE {
+    background-color: #fd7e14;
+    color: white;
+    border-color: #fd7e14;
+}
+
+.subjectE:hover {
+    background-color: #e8630a;
+    border-color: #e8630a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(253, 126, 20, 0.3);
+}
+
+/* 콘텐츠IT전공 과목 */
+.subjectC {
+    background-color: #51B3AC;
+    color: white;
+    border-color: #51B3AC;
+}
+
+.subjectC:hover {
+    background-color: #2a8079;
+    border-color: #2a8079;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(81, 179, 172, 0.3);
+}
+
+
+
+/* 페이지 인디케이터 */
+.page_indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.indicator {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background-color: transparent;
+    color: #666;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indicator.active {
+    background: linear-gradient(135deg, #51B3AC, #2a8079);
+    border-color: #51B3AC;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(81, 179, 172, 0.3);
+}
+
+.indicator:hover {
+    border-color: #51B3AC;
+    color: #51B3AC;
+}
+
+/* 현재 학년 정보 */
+.current_grade_info {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    background: linear-gradient(135deg, #51B3AC, #2a8079);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .majortrack_container {
+        padding: 20px 15px;
+        max-width: 100%;
+    }
+    
+    .majortrack_title {
+        font-size: 1.6rem;
+    }
+    
+    .slider_container {
+        padding: 15px;
+    }
+    
+    .nav_button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin: 0 10px;
+    }
+    
+    .subject, .subjectE, .subjectC {
+        height: 60px;
+        font-size: 0.75rem;
+        padding: 8px 4px;
+    }
+    
+    .subjectI {
+        height: 60px;
+    }
+    
+    .legend_container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .indicator {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* 슬라이드 애니메이션 */
+.slide {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 터치 제스처를 위한 스타일 */
+.slider_wrapper {
+    touch-action: pan-y;
+}
+
+/* 호버 시 전체 컨테이너 효과 */
+.majortrack_container:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
