@@ -14,8 +14,10 @@ import Home from '../page_others/Home'
 
 function App() {
   return (
-      <Header/>
-      <Content/>
+    <>
+      <Header />
+      <Content />
+    </>
   )
 }
 
