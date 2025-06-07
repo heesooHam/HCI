@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import './App.css'
 import Header from './Header'
-import Content from './Content'
+import Content from './Content.jsx'
 
 import Home from '../page_others/Home'
 
@@ -17,7 +17,8 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route path = "HCI/Content" Component={<Content />} />
+        <Route path = "HCI/" element = {<Home url = "https://hcms.hallym.ac.kr/info-s/"/>} />
+        <Route path = "HCI/Content" element={<Content />} />
       </Routes>
     </Router>
   )

@@ -1,9 +1,12 @@
 function Home({ url }) {
     return (
-        <iframe src={url}
-            width="100%"
-            height="600px"
-            title="ExternalSite" />
+        <div width = "100%" height = "100%">
+            <iframe src={url}
+                width = "100%"
+                height = "1500vh"
+                title="ExternalSite"
+                 />
+        </div>
     )
 }
 
