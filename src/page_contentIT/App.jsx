@@ -14,13 +14,8 @@ import Home from '../page_others/Home'
 
 function App() {
   return (
-    <Router basename = {process.env.PUBLIC_URL}>
       <Header/>
-      <Routes>
-        <Route path = "/" element = {<Home url = "https://hcms.hallym.ac.kr/info-s/"/>} />
-        <Route path = "/Content" element={<Content />} />
-      </Routes>
-    </Router>
+      <Content/>
   )
 }
 
