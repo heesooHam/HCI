@@ -127,6 +127,20 @@
   color: white;
 }
 
+/* NavLink 활성 상태 스타일 */
+.sidebar_nav a.active {
+  background-color: #51B3AC;
+  color: white;
+  border-left-color: #2a8079;
+  font-weight: 600;
+}
+
+.sidebar_nav a.active:hover {
+  background-color: #2a8079;
+  color: white;
+  border-left-color: #1a5a52;
+}
+
 /* 애니메이션 키프레임 */
 @keyframes overlayFadeIn {
   from {

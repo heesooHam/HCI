@@ -1,4 +1,69 @@
-/* 콘텐츠 전체 컨테이너 */
+/* 트랙 요약 섹션 */
+.track_summary {
+    background: linear-gradient(135deg, #51B3AC, #2a8079);
+    color: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.summary_title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.track_badges {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.track_badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.track_badge:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.vr_badge {
+    background: linear-gradient(135deg, #6f42c1, #5a2d91);
+}
+
+.game_badge {
+    background: linear-gradient(135deg, #fd7e14, #e8630a);
+}
+
+/* 트랙 링크 버튼 */
+.track_link {
+    margin-top: 20px;
+}
+
+.btn_track {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1/* 콘텐츠 전체 컨테이너 */
+}
 .content_container {
   max-width: 1200px;
   margin: 0 auto;
@@ -142,6 +207,22 @@
   margin: 0;
 }
 
+/* 트랙 요약 섹션 */
+.track_summary {
+  background: linear-gradient(135deg, #51B3AC, #2a8079);
+  color: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.summary_title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
 
 .track_badges {
   display: flex;
