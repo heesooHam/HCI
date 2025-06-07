@@ -57,20 +57,25 @@
   transform: translateY(1px); /* 클릭시 살짝 눌림 효과 */
 }
 
+/* 한림대 로고 이미지 */
 .hallymSymbols {
   height: 50px;             /* 고정 높이로 변경 */
   width: auto;              /* 비율 유지 */
   object-fit: contain;      /* 이미지 비율 유지 */
+  max-width: 60px;          /* 최대 너비 제한 */
 }
 
-.menubar{
+/* 메뉴바 이미지 */
+.menubar {
   height: 50px;             /* 고정 높이로 변경 */
   width: auto;              /* 비율 유지 */
   object-fit: contain;      /* 이미지 비율 유지 */
+  max-width: 60px;          /* 최대 너비 제한 */
 }
 
+/* 대학명 텍스트 */
 .header_college_name {
-  font-size: 1.5rem;        /* 텍스트 크기 */
+  font-size: 1.4rem;        /* 텍스트 크기 */
   font-weight: bold;        /* 굵은 글씨 */
   color: #333;              /* 텍스트 색상 */
 }
@@ -83,4 +88,118 @@ body {
 /* 또는 메인 콘텐츠 컨테이너에 적용 */
 .main-content {
   margin-top: 10vh;         /* 헤더 높이만큼 위쪽 여백 */
+}
+
+/* 반응형 디자인 - 태블릿 */
+@media (max-width: 1024px) {
+  .main_Header {
+    padding: 0 15px;
+  }
+  
+  .header_college_name {
+    font-size: 1.2rem;
+  }
+  
+  .hallymSymbols, .menubar {
+    height: 45px;
+    max-width: 55px;
+  }
+  
+  .login_button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    margin-right: 20px;
+  }
+}
+
+/* 반응형 디자인 - 모바일 */
+@media (max-width: 768px) {
+  .main_Header {
+    height: 8vh;
+    min-height: 60px;
+    padding: 0 12px;
+  }
+  
+  .left_group {
+    gap: 10px;
+    padding: 8px;
+  }
+  
+  .header_college_name {
+    font-size: 1rem;
+  }
+  
+  .hallymSymbols, .menubar {
+    height: 35px;
+    max-width: 45px;
+  }
+  
+  .login_button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+  
+  body {
+    padding-top: 8vh;
+  }
+  
+  .main-content {
+    margin-top: 8vh;
+  }
+}
+
+/* 반응형 디자인 - 작은 모바일 */
+@media (max-width: 480px) {
+  .main_Header {
+    height: 7vh;
+    min-height: 55px;
+    padding: 0 10px;
+  }
+  
+  .left_group {
+    gap: 8px;
+    padding: 6px;
+  }
+  
+  .header_college_name {
+    font-size: 0.9rem;
+  }
+  
+  .hallymSymbols, .menubar {
+    height: 30px;
+    max-width: 40px;
+  }
+  
+  .login_button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    margin-right: 5px;
+  }
+  
+  body {
+    padding-top: 7vh;
+  }
+  
+  .main-content {
+    margin-top: 7vh;
+  }
+}
+
+/* 아주 작은 화면 */
+@media (max-width: 360px) {
+  .header_college_name {
+    font-size: 0.8rem;
+  }
+  
+  .hallymSymbols, .menubar {
+    height: 25px;
+    max-width: 35px;
+  }
+  
+  .login_button {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
 }

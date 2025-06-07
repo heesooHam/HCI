@@ -1,6 +1,6 @@
 /* 메인 컨테이너 */
 .majortrack_container {
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 40px 20px;
     background-color: #f8f9fa;
@@ -35,7 +35,7 @@
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
 }
 
@@ -68,42 +68,32 @@
     background-color: #fd7e14;
 }
 
-/* 슬라이더 컨테이너 */
-.slider_container {
+/* 모든 학년 컨테이너 */
+.all_grades_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
     background-color: white;
     border-radius: 12px;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
 }
-
-/* 슬라이더 래퍼 */
-.slider_wrapper {
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-/* 슬라이더 트랙 */
-.slider_track {
-    width: 100%;
-}
-
-/* 각 슬라이드 */
-.slide {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-
 
 /* 학년 테이블 */
 .curtable {
-    width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.curtable:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* 학년 헤더 */
@@ -115,11 +105,11 @@
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     background: linear-gradient(135deg, #51B3AC, #2a8079);
     box-shadow: 0 4px 15px rgba(81, 179, 172, 0.3);
-    transition: transform 0.2s ease;
+    margin-bottom: 10px;
 }
 
 /* 학년별 색상 구분 */
@@ -147,18 +137,17 @@
 .subjectlist {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 10px;
+    gap: 12px;
 }
 
 /* 공통 버튼 스타일 */
 .subject, .subjectE, .subjectC {
-    padding: 10px 6px;
+    padding: 12px 8px;
     border-radius: 8px;
     width: 100%;
-    height: 70px;
+    height: 75px;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
     line-height: 1.2;
     transition: all 0.2s ease;
@@ -213,119 +202,76 @@
     box-shadow: 0 4px 12px rgba(81, 179, 172, 0.3);
 }
 
-
-
-/* 페이지 인디케이터 */
-.page_indicators {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+/* 애니메이션 효과 */
+.curtable {
+    animation: fadeInUp 0.6s ease-out;
 }
 
-.indicator {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-    background-color: transparent;
-    color: #666;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.curtable:nth-child(1) { animation-delay: 0.1s; }
+.curtable:nth-child(2) { animation-delay: 0.2s; }
+.curtable:nth-child(3) { animation-delay: 0.3s; }
+.curtable:nth-child(4) { animation-delay: 0.4s; }
 
-.indicator.active {
-    background: linear-gradient(135deg, #51B3AC, #2a8079);
-    border-color: #51B3AC;
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(81, 179, 172, 0.3);
-}
-
-.indicator:hover {
-    border-color: #51B3AC;
-    color: #51B3AC;
-}
-
-/* 현재 학년 정보 */
-.current_grade_info {
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333;
-    background: linear-gradient(135deg, #51B3AC, #2a8079);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 반응형 디자인 */
+@media (max-width: 1200px) {
+    .all_grades_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .majortrack_container {
         padding: 20px 15px;
-        max-width: 100%;
     }
     
     .majortrack_title {
         font-size: 1.6rem;
     }
     
-    .slider_container {
-        padding: 15px;
-    }
-    
-    .nav_button {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        margin: 0 10px;
+    .all_grades_container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
     }
     
     .subject, .subjectE, .subjectC {
-        height: 60px;
-        font-size: 0.75rem;
-        padding: 8px 4px;
+        height: 65px;
+        font-size: 0.8rem;
+        padding: 10px 6px;
     }
     
-    .subjectI {
-        height: 60px;
+    .legend_container {
+        gap: 20px;
     }
     
+    .grade {
+        font-size: 1.1rem;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
     .legend_container {
         flex-direction: column;
         align-items: center;
         gap: 15px;
     }
     
-    .indicator {
-        width: 35px;
-        height: 35px;
+    .subject, .subjectE, .subjectC {
+        font-size: 0.75rem;
+        height: 60px;
     }
-}
-
-/* 슬라이드 애니메이션 */
-.slide {
-    animation: slideIn 0.5s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* 터치 제스처를 위한 스타일 */
-.slider_wrapper {
-    touch-action: pan-y;
 }
 
 /* 호버 시 전체 컨테이너 효과 */

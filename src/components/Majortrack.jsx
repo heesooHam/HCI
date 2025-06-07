@@ -1,22 +1,6 @@
-/** 전공필수 Component*/
-function EssentialBtn({ name: props }) {
-    return (<button className='subjectE'>{props}</button>)
-}
-
-/** 콘텐츠 IT전공 Component*/
-function ContentBtn({ name: props }) {
-    return (<button className='subjectC'>{props}</button>)
-}import './Majortrack.css'
-import { useState } from 'react'
+import './Majortrack.css'
 
 function Majortrack() {
-    const [currentGrade, setCurrentGrade] = useState(0);
-    const gradeNames = ['1학년', '2학년', '3학년', '4학년'];
-
-    const goToGrade = (index) => {
-        setCurrentGrade(index);
-    };
-
     return (
         <div className="majortrack_container">
             <div className="majortrack_header">
@@ -38,32 +22,30 @@ function Majortrack() {
                     <span>전공필수</span>
                 </div>
             </div>
-            
-           {/* 페이지 인디케이터 */}
-            <div className="page_indicators">
-                {gradeNames.map((_, index) => (
-                    <button
-                        key={index}
-                        className={`indicator ${currentGrade === index ? 'active' : ''}`}
-                        onClick={() => goToGrade(index)}
-                    >
-                        {index + 1}
-                    </button>
-                ))}
-            </div>
 
-            <div className='slider_container'>
-                <div className='slider_wrapper'>
-                    <div className='slider_track'>
-                        <div className='slide'>
-                            <div className='curtable'>
-                                <div className={`grade grade_${currentGrade + 1}`}>
-                                    {gradeNames[currentGrade]}
-                                </div>
-                                <SubjectList index={currentGrade} />
-                            </div>
-                        </div>
-                    </div>
+            <div className='all_grades_container'>
+                {/* 1학년 */}
+                <div className='curtable'>
+                    <div className="grade grade_1">1학년</div>
+                    <SubjectList index={0} />
+                </div>
+                
+                {/* 2학년 */}
+                <div className='curtable'>
+                    <div className="grade grade_2">2학년</div>
+                    <SubjectList index={1} />
+                </div>
+                
+                {/* 3학년 */}
+                <div className='curtable'>
+                    <div className="grade grade_3">3학년</div>
+                    <SubjectList index={2} />
+                </div>
+                
+                {/* 4학년 */}
+                <div className='curtable'>
+                    <div className="grade grade_4">4학년</div>
+                    <SubjectList index={3} />
                 </div>
             </div>
         </div>
@@ -136,6 +118,16 @@ function SubjectBtn({ name: props }) {
     return (
         <button className="subject">{props}</button>
     )
+}
+
+/** 전공필수 Component*/
+function EssentialBtn({ name: props }) {
+    return (<button className='subjectE'>{props}</button>)
+}
+
+/** 콘텐츠 IT전공 Component*/
+function ContentBtn({ name: props }) {
+    return (<button className='subjectC'>{props}</button>)
 }
 
 /** 교과목 리스트를 불러와 컴포넌트로 변환하는 함수  */
