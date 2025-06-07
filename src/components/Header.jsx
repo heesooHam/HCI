@@ -1,6 +1,8 @@
 import './Header.css'
 import { useState } from 'react'
 import Sidebar from './SideBar';
+import hallymSymbols from '../assets/hallym_symbols.png'
+import menuBar from '../assets/menu_bar.png'
 
 function Header(){
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -28,8 +30,8 @@ function Header(){
         <>
             <div className='main_Header'>
                 <div className='left_group' onClick={toggleSidebar}>
-                    <img src = "src/assets/menu_bar.png" className='menubar'></img>
-                    <img src = "src/assets/hallym_symbols.png" alt = "Hallym" className='hallymSymbols'/>
+                    <img src = {menuBar} className='menubar'></img>
+                    <img src = {hallymSymbols} alt = "Hallym" className='hallymSymbols'/>
                     <span className='header_college_name'>정보과학대학</span>
                 </div>
                 <button className='login_button'>로그인</button>
