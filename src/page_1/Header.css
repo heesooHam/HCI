@@ -35,7 +35,7 @@
 
 /* 로그인 버튼 스타일 */
 .login_button {
-  margin-right: 30px;
+  margin-right: 35px;
   background-color: #51B3AC;  /* 파란색 배경 */
   color: white;              /* 흰색 글자 */
   border: none;              /* 테두리 제거 */
