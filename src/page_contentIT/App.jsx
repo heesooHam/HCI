@@ -122,7 +122,7 @@ function App() {
         <Header />
         <main className="main-content">
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/faculty" element={<Faculty />} />
             <Route path="/software" element={<Content />} />
