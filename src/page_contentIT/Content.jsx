@@ -1,7 +1,10 @@
 import './Content.css'
+import './Majortrack'
+import Majortrack from './Majortrack';
 
 function Content(){
     return(
+        <>
         <div className="content_container">
             <div className="content_header">
                 <h1 className="main_title">콘텐츠IT 전공</h1>
@@ -63,6 +66,8 @@ function Content(){
 
             </div>
         </div>
+            <Majortrack />
+        </>
     )
 }
 
