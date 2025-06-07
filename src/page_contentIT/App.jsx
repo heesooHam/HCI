@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom'
 import './App.css'
 import Header from './Header'
 import Content from './Content'
@@ -117,23 +117,23 @@ const Graduate = () => (
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <div className="App">
         <Header />
         <main className="main-content">
           <Routes>
-            <Route path="HCI/home" element={<Home />} />
-            <Route path="HCI/about" element={<About />} />
-            <Route path="HCI/faculty" element={<Faculty />} />
-            <Route path="HCI/software" element={<Content />} />
-            <Route path="HCI/datascience" element={<DataScience />} />
-            <Route path="HCI/ai" element={<AI />} />
-            <Route path="HCI/graduate" element={<Graduate />} />
-            <Route path="HCI/content" element={<Content />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/faculty" element={<Faculty />} />
+            <Route path="/software" element={<Content />} />
+            <Route path="/datascience" element={<DataScience />} />
+            <Route path="/ai" element={<AI />} />
+            <Route path="/graduate" element={<Graduate />} />
+            <Route path="/content" element={<Content />} />
           </Routes>
         </main>
       </div>
-    </Router>
+    </HashRouter>
   )
 }
 
