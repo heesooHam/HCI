@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Header from './Header'
 import Content from './Content'
-import Majortrack from './Majortrack'
 
 // 페이지 컴포넌트들
 const Home = () => (
@@ -118,7 +117,7 @@ const Graduate = () => (
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Header />
         <main className="main-content">
