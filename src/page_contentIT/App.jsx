@@ -4,7 +4,7 @@ import './App.css'
 import Header from './Header'
 import Content from './Content'
 
-import '../page_others/Home'
+import Home from '../page_others/Home'
 
 // 할 일 :
 // 전공 트랙 밑에 졸업 후 진로, 기타사항 완성시키기
@@ -17,7 +17,6 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route path = "HCI/" Component={<Home url = "https://hcms.hallym.ac.kr/info-s/"/>} />
         <Route path = "HCI/Content" Component={<Content />} />
       </Routes>
     </Router>
