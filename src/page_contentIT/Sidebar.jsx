@@ -14,7 +14,7 @@ function Sidebar({ isOpen, isClosing, onClose }) {
                 </div>
                 <nav className="sidebar_nav">
                     <ul>
-                        <li><a href="#/home">홈</a></li>
+                        <li><a href="">홈</a></li>
                         <li><a href="#/about">정보과학대학 소개</a></li>
                         <li><a href="#/faculty">교수진소개</a></li>
                         <li><a href="#/software">소프트웨어학부</a></li>
