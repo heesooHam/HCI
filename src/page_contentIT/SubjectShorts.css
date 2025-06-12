@@ -222,3 +222,252 @@
         background: none;
     }
 }
+
+/* 비디오 모달 스타일 */
+.video_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: videoFadeIn 0.3s ease-out;
+}
+
+.video_container {
+    width: 90%;
+    max-width: 800px;
+    height: 80vh;
+    max-height: 600px;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(255, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    animation: videoSlideUp 0.4s ease-out;
+}
+
+.video_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+    color: white;
+}
+
+.video_title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.video_title::before {
+    content: '▶';
+    font-size: 1rem;
+    color: #FFD700;
+}
+
+.video_close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.video_close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.video_content {
+    flex: 1;
+    position: relative;
+    background: #000;
+}
+
+.video_content iframe {
+    border: none;
+    border-radius: 0;
+}
+
+.video_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #000);
+    color: white;
+}
+
+.video_info {
+    flex: 1;
+}
+
+.video_description {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.video_controls {
+    display: flex;
+    gap: 10px;
+}
+
+.video_btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fullscreen_btn {
+    background: linear-gradient(135deg, #4CAF50, #388E3C);
+    color: white;
+}
+
+.fullscreen_btn:hover {
+    background: linear-gradient(135deg, #66BB6A, #4CAF50);
+    transform: translateY(-2px);
+}
+
+.close_btn {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    color: white;
+}
+
+.close_btn:hover {
+    background: linear-gradient(135deg, #ef5350, #f44336);
+    transform: translateY(-2px);
+}
+
+/* 비디오 모달 애니메이션 */
+@keyframes videoFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes videoSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 유튜브 Shorts 스타일 (세로형) */
+@media (max-width: 768px) {
+    .video_container {
+        width: 95%;
+        height: 85vh;
+        max-width: 400px;
+        max-height: 700px;
+    }
+    
+    .video_header {
+        padding: 12px 15px;
+    }
+    
+    .video_title {
+        font-size: 1rem;
+    }
+    
+    .video_footer {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .video_controls {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .video_btn {
+        flex: 1;
+        max-width: 120px;
+    }
+}
+
+/* 모바일 최적화 (세로 모드) */
+@media (max-width: 480px) and (orientation: portrait) {
+    .video_container {
+        width: 100%;
+        height: 100vh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+    }
+    
+    .video_header {
+        padding: 10px 15px;
+    }
+    
+    .video_title {
+        font-size: 0.95rem;
+    }
+    
+    .video_close {
+        width: 30px;
+        height: 30px;
+        font-size: 1.3rem;
+    }
+}
+
+/* 로딩 상태에서 비디오 준비 */
+.video_content.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #333, #111);
+}
+
+.video_content.loading::after {
+    content: '로딩 중...';
+    color: white;
+    font-size: 1.1rem;
+    animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+    0%, 20% { opacity: 0.2; }
+    50% { opacity: 1; }
+    80%, 100% { opacity: 0.2; }
+}
+
+/* 다크모드에서 비디오 모달 */
+@media (prefers-color-scheme: dark) {
+    .video_overlay {
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+    
+    .video_container {
+        box-shadow: 0 20px 60px rgba(255, 0, 0, 0.4);
+    }
+}
