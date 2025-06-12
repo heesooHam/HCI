@@ -1,0 +1,242 @@
+/* 모달 스타일 */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal_content {
+    background: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalSlideUp 0.3s ease-out;
+}
+
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 2px solid #f8f9fa;
+    background: linear-gradient(135deg, #51B3AC, #2a8079);
+    color: white;
+    border-radius: 16px 16px 0 0;
+}
+
+.modal_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.modal_close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.modal_close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.modal_body {
+    padding: 30px;
+}
+
+.subject_info {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.subject_type {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+}
+
+.subject_type.major {
+    background: linear-gradient(135deg, #51B3AC, #2a8079);
+}
+
+.subject_type.majorC {
+    background: linear-gradient(135deg, #51B3AC, #2a8079);
+}
+
+.subject_type.majorE {
+    background: linear-gradient(135deg, #fd7e14, #e8630a);
+}
+
+.subject_credits, .subject_grade {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: #f8f9fa;
+    color: #333;
+    border: 2px solid #e9ecef;
+}
+
+.subject_description {
+    line-height: 1.7;
+}
+
+.subject_description h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #51B3AC;
+    margin: 20px 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f8f9fa;
+    position: relative;
+}
+
+.subject_description h4::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #51B3AC;
+}
+
+.subject_description p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.subject_description ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.subject_description li {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.modal_footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 20px 30px 30px;
+    border-top: 1px solid #f8f9fa;
+}
+
+.btn_syllabus, .btn_professor, .btn_close {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.btn_syllabus {
+    background: linear-gradient(135deg, #51B3AC, #2a8079);
+    color: white;
+}
+
+.btn_syllabus:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(81, 179, 172, 0.3);
+}
+
+.btn_professor {
+    background: linear-gradient(135deg, #6f42c1, #5a2d91);
+    color: white;
+}
+
+.btn_professor:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3);
+}
+
+.btn_close {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn_close:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* 모달 애니메이션 */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 모달 반응형 */
+@media (max-width: 768px) {
+    .modal_content {
+        width: 95%;
+        max-height: 85vh;
+    }
+    
+    .modal_header, .modal_body, .modal_footer {
+        padding: 20px;
+    }
+    
+    .modal_title {
+        font-size: 1.3rem;
+    }
+    
+    .modal_footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn_syllabus, .btn_professor, .btn_close {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .subject_info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
