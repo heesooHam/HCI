@@ -3,11 +3,19 @@ import './App.css'
 import Header from './Header'
 import Content from './Content'
 
+
+// 할일 :
+// 강의명 수정
+// ui 오류 고치기
+// 홈페이지명 수정
+// 필터링 기능 추가
+// 동영상 재생
+
 // 페이지 컴포넌트들
 const Home = () => (
     <div className="iframe_container">
         <iframe 
-            src="https://www.hallym.ac.kr" 
+            src="https://sw.hallym.ac.kr/index.php" 
             width="100%" 
             height="100%"
             title="Hallym University"
@@ -24,7 +32,7 @@ const About = () => (
         <h1>정보과학대학 소개</h1>
         <div className="iframe_container">
             <iframe 
-                src="https://www.hallym.ac.kr/college/info" 
+                src="https://sw.hallym.ac.kr/index.php?mp=1_1" 
                 width="100%" 
                 height="100%"
                 title="정보과학대학 소개"
@@ -40,7 +48,7 @@ const Faculty = () => (
         <h1>교수진 소개</h1>
         <div className="iframe_container">
             <iframe 
-                src="https://www.hallym.ac.kr/college/info/faculty" 
+                src="https://www.hallym.ac.kr/hallym_univ/sub01/cP14/sCP15/tab1" 
                 width="100%" 
                 height="100%"
                 title="교수진 소개"
@@ -51,28 +59,12 @@ const Faculty = () => (
     </div>
 )
 
-const Software = () => (
-    <div className="page_container">
-        <h1>소프트웨어학부</h1>
-        <div className="iframe_container">
-            <iframe 
-                src="https://cs.hallym.ac.kr" 
-                width="100%" 
-                height="100%"
-                title="소프트웨어학부"
-                frameBorder="0"
-                className="fullscreen_iframe"
-            />
-        </div>
-    </div>
-)
-
 const DataScience = () => (
     <div className="page_container">
-        <h1>데이터사이언스학부</h1>
+        <h1>빅데이터전공</h1>
         <div className="iframe_container">
             <iframe 
-                src="https://bigdata.hallym.ac.kr" 
+                src="https://sw.hallym.ac.kr/index.php?mp=2_2" 
                 width="100%" 
                 height="100%"
                 title="데이터사이언스학부"
@@ -83,9 +75,9 @@ const DataScience = () => (
     </div>
 )
 
-const AI = () => (
+const SmartIOT = () => (
     <div className="page_container">
-        <h1>인공지능융합학부</h1>
+        <h1>스마트IOT</h1>
         <div className="iframe_container">
             <iframe 
                 src="https://ai.hallym.ac.kr" 
@@ -104,7 +96,7 @@ const Graduate = () => (
         <h1>대학원</h1>
         <div className="iframe_container">
             <iframe 
-                src="https://www.hallym.ac.kr/graduate" 
+                src="https://sw.hallym.ac.kr/index.php?mp=3_1_1" 
                 width="100%" 
                 height="100%"
                 title="대학원"
@@ -125,11 +117,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/faculty" element={<Faculty />} />
-            <Route path="/software" element={<Content />} />
-            <Route path="/datascience" element={<DataScience />} />
-            <Route path="/ai" element={<AI />} />
-            <Route path="/graduate" element={<Graduate />} />
             <Route path="/content" element={<Content />} />
+            <Route path="/datascience" element={<DataScience />} />
+            <Route path="/smart" element={<SmartIOT />} />
+            <Route path="/graduate" element={<Graduate />} />
           </Routes>
         </main>
       </div>

@@ -1,6 +1,7 @@
 import './Content.css'
-import Majortrack from './Majortrack';
 
+import Majortrack from './Majortrack';
+import Foot from './Foot';
 
 function Content() {
     return (
@@ -53,6 +54,7 @@ function Content() {
                 </div>
             </div>
             <Majortrack />
+            <Foot />
         </>
     )
 }

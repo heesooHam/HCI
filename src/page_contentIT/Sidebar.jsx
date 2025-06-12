@@ -17,10 +17,10 @@ function Sidebar({ isOpen, isClosing, onClose }) {
                         <li><a href="/HCI/">홈</a></li>
                         <li><a href="#/about">정보과학대학 소개</a></li>
                         <li><a href="#/faculty">교수진소개</a></li>
-                        <li><a href="#/software">소프트웨어학부</a></li>
+                        <li><a href="#/content">콘텐츠 IT</a></li>
                         <li><a href="#/dataScience">데이터사이언스학부</a></li>
-                        <li><a href="#/AI">인공지능융합학부</a></li>
-                        <li><a href="#/graduateSchool">대학원</a></li>
+                        <li><a href="#/smart">스마트 IOT</a></li>
+                        <li><a href="#/graduate">대학원</a></li>
                     </ul>
                 </nav>
             </div>

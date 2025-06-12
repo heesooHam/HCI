@@ -85,24 +85,14 @@ function SubjectList({ index }) {
             { name: "모바일프로그래밍", type: "major" },
             { name: "정보보호론", type: "major" },
             { name: "웹프로그래밍", type: "major" },
-            { name: "인공지능", type: "major" },
             { name: "컴퓨터네트워크", type: "major" },
-            { name: "멀티미디어개론", type: "majorC" },
-            { name: "3D프린팅과모델링", type: "majorC" },
-            { name: "가상현실기초및실습", type: "majorC" },
-            { name: "증강현실기초및실습", type: "majorC" },
-            { name: "컴퓨터그래픽스", type: "majorC" },
-            { name: "게임프로그래밍", type: "majorC" }
+            { name: "가상현실과증강현실", type: "majorC" },
+            { name: "컴퓨터그래픽스", type: "majorC" }
         ],
         // 4학년
         [
             { name: "HCI", type: "majorC" },
-            { name: "콘텐츠IT캡스톤디자인", type: "majorE" },
-            { name: "GPU프로그래밍", type: "majorC" },
-            { name: "게임인공지능", type: "majorC" },
-            { name: "가상현실프로그래밍", type: "majorC" },
-            { name: "증강현실프로그래밍", type: "majorC" },
-            { name: "햅틱인터랙션", type: "majorC" }
+            { name: "소프트웨어캡스톤디자인", type: "majorE" }
         ]
     ];
     // 교과목을 저장한 배열을 Component로 변환
